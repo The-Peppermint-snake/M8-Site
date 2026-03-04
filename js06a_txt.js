@@ -33,6 +33,10 @@ window.addEventListener("load", function() {
 
             let totalCost = subtotal+salesTax;
             orderForm.elements.totalCost.value = totalCost.toLocaleString("en-Us", {style: "currency", currency: "USD"});
+
+            orderForm.elements.modelName.value = model.options[mIndex].text;
+            let selectedPlan = document.querySelector('input[name="plan"]:checked');
+            orderForm.elements.planName.value = selectedPlan.labels[0].textContent;
       }
 });
 

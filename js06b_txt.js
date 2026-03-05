@@ -33,6 +33,8 @@ function validateNumber() {
       card.setCustomValidity("Enter your card number");
    } else if (cNum.validity.patternMismatch) {
       cNum.setCustomValidity("Enter a valid card number");
+   } else if (luhn(cNum.value) === false) {
+      cNum.setCustomValidity("Enter a legitimate card number");
    } else {
       card.setCustomValidity("");
    }
@@ -69,6 +71,7 @@ function validateCVC() {
       cvc.setCustomValidity("");
    }
 }
+
 
 /* ------- Luhn Algorithm used for Validating Credit Card Numbers   ----- */
 
